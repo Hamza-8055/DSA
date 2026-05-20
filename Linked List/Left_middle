@@ -1,0 +1,12 @@
+void middlenode(){   //finding the left middle node of the linked lists
+    if(head==null){
+        System.out.println("Error!");
+    }
+    node fast = head;
+    node slow = head;
+    while(fast.next != null && fast.next.next !=null ){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    System.out.println(slow.val+" ");
+}
