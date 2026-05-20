@@ -1,0 +1,127 @@
+package LinkedList;              //implemented linked list by self
+
+class SLL{
+    node head;
+    node tail;
+    int size;
+
+    void insertAthead(int val){
+        node temp = new node(val);
+        if(head==null){
+            head=tail=temp;
+        }else{
+            temp.next = head;
+            head = temp;
+        }
+        size++;
+    }
+    void inserAttail(int val){
+        node temp = new node(val);
+        if(head==null){
+            head=tail=temp;
+        }else{
+            tail.next = temp;
+            tail = temp;
+        }
+        size++;
+    }
+    void display(){
+        node temp = head;
+        while(temp != null){
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+    void inserAtidx(int idx, int val){
+        node temp = new node(val);
+        if(idx==0){
+            insertAthead(val);
+            return;
+        }
+        if(idx==size){
+            inserAttail(val);
+            return;
+        }
+        if(idx>size){
+            System.out.println("Error!");
+        }
+        node x = head;
+        for(int i = 0; i<idx-1;i++){
+            x = x.next;
+        }
+        temp.next = x.next;
+        x.next = temp;
+        size++;
+
+    }
+    int getElement(int idx) throws Error{
+        node temp = head;
+        if(idx>=size || idx<0){
+            throw new Error("Invalid index!");
+
+        }
+
+        for(int i = 0; i<idx;i++){
+            temp = temp.next;
+        }
+        return temp.val;
+
+    }
+    void setelement(int idx, int val){
+
+        if(idx >= size || idx<0){
+            System.out.println("Error!");
+        }
+
+        node temp = head;
+        for(int i = 0; i<idx;i++){
+            temp = temp.next;
+        }
+        temp.val = val;
+    }
+
+    void deleteelement(int idx){
+        node temp = head;
+        if(idx==0){
+            head = temp.next;
+            size--;
+            return;
+        }
+        for(int i = 0; i<idx-1; i++){
+            temp = temp.next;
+        }
+        if(temp.next==tail){
+            tail = temp;
+        }
+        temp.next = temp.next.next;
+        size--;
+    }
+    void size(){
+        System.out.println(size);
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SLL ll = new SLL();
+        ll.insertAthead(30);
+        ll.insertAthead(40);
+        ll.insertAthead(50);
+        ll.display();
+        ll.inserAtidx(1, 100);
+        ll.display();
+        ll.inserAtidx(3, 200);
+        ll.display();
+        ll.inserAtidx(5, 300);
+        ll.display();
+        System.out.println(ll.getElement(3));
+        ll.setelement(4, 240);
+        ll.display();
+        ll.deleteelement(5);
+        ll.display();
+        ll.size();
+        System.out.println(ll.tail.val);
+    }
+}
