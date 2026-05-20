@@ -1,0 +1,20 @@
+class Solution {             //swapping the values of kth node from both side
+    public ListNode swapNodes(ListNode head, int k) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        for(int i = 1; i<k;i++){
+            fast = fast.next;
+        }
+        ListNode a = fast;
+        while(fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        int temp = a.val;
+        a.val = slow.val;
+        slow.val = temp;
+
+        return head;
+    }
+}
