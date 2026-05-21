@@ -1,0 +1,56 @@
+class Solution {       //reversing the required part of the ll
+    public void reverseList(ListNode head) {
+        ListNode p = null;
+        ListNode c = head;
+        ListNode n = head;
+        while(c != null){
+            n = c.next;
+            c.next = p;
+            p = c;
+            c = n;
+        }
+    }
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if(head.next == null || left==right){
+            return head;
+        }
+        ListNode temp = head;
+        ListNode a = null , b = null, c = null, d = null;
+        int pos = 1;
+
+        while(temp != null){
+            if(pos == left-1){
+                a = temp;
+            }
+            if(pos == left){
+                b = temp;
+            }
+            if(pos == right){
+                c = temp;
+            }
+            if(pos == right+1){
+                d = temp;
+            }
+            temp = temp.next;
+            pos++;
+        }
+
+        if(a != null){
+            a.next = null;
+        }
+        if(c != null){
+            c.next = null;
+        }
+        reverseList(b);
+        if(a != null){
+            a.next = c;
+        }
+        b.next = d;
+
+        if(a==null){
+            return c;
+        }
+
+        return head;
+    }
+}
