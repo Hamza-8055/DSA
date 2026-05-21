@@ -1,0 +1,48 @@
+public class Solution {       //detecting position from which the cycle starts
+    public ListNode detectCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        if(head==null || head.next==null){
+            return null;
+        }
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast){
+                break;
+            }
+        }
+        if(slow!=fast){
+            return null;
+        }
+        ListNode temp = head;
+        while(temp != slow){
+            slow = slow.next;
+            temp = temp.next;
+        }
+        return slow;
+
+    }
+}
+
+class Solution {             //removing duplicate elements from the LL
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        if(head==null){
+            return null;
+        }
+        while(fast != null){
+            if(slow.val==fast.val){
+                fast = fast.next;
+            }else{
+                slow.next = fast;
+                slow = fast;
+            }
+        }
+        slow.next = fast;
+        return head;
+
+    }
+
+}
