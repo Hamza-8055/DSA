@@ -1,0 +1,24 @@
+public class Main{               //find next greater element in an array
+    public static void main(String[] args) {
+        int arr[] = {1,3,2,1,8,6,3,4};
+        int n = arr.length;
+        int res[] = new int[n];
+        res[n-1] = -1;
+        for(int i = 0; i<n;i++){
+            for(int j = i+1;j<n;j++){
+                res[i] = -1;
+                if(arr[j]>arr[i]){
+                    res[i] = arr[j];
+                    break;
+                }
+            }
+        }
+        for(int i = 0 ; i<n;i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        for(int i = 0 ; i<n;i++){
+            System.out.print(res[i] + " ");
+        }
+    }
+}
