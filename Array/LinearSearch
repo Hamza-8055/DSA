@@ -1,0 +1,39 @@
+import java.util.*;         //linear search in array
+public class Main {
+    public static void LinearSearch(int marks[], int key) {
+        boolean found = false;
+        for (int i = 0; i < marks.length; i++) {
+            if (key == marks[i]) {
+                System.out.println("Element " + key + " found at " + i + " index!");
+                found = true;
+
+                break;
+
+            }
+        }
+        if (!found) {
+            System.out.println("Element not found");
+
+
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements: ");
+
+        int n = sc.nextInt();
+        int marks[] = new int[n];
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i < marks.length; i++) {
+            marks[i] = sc.nextInt();
+        }
+
+        System.out.println("Enter the key: ");
+        int key = sc.nextInt();
+
+        LinearSearch(marks, key);
+    }
+}
