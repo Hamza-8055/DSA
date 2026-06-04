@@ -1,0 +1,40 @@
+import java.util.*;    //Creating 2D array and searching elements
+public class Main{
+    public static boolean Search(int arr[][],int key){
+        for(int i =0; i<arr.length;i++){
+            for(int j = 0; j<arr[0].length;j++){
+                if (arr[i][j]==key){
+                    System.out.println("Key is found at the index ("+i+","+j+")");
+                }
+
+
+            }
+
+        }
+        System.out.println("Key not found!");
+        return false;
+
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[][] = new int [3][4];
+        System.out.println("Enter the elements of the matrix: ");
+        for(int i = 0; i<arr.length;i++){
+            for(int j=0; j<arr[0].length;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        for(int i = 0; i<arr.length;i++){
+            for(int j=0; j<arr[0].length;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("Enter the key: ");
+        int key = sc.nextInt();
+        Search(arr,key);
+
+    }
+}
