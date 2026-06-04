@@ -1,0 +1,39 @@
+import java.util.*;      //printing the maximum sum of the subarrays of an array
+public class Main{
+    public static void Subarrays(int arr[]){
+        int maxsum =0;
+
+
+        for(int i =0;i<arr.length;i++){
+            int start = i;
+            for(int j=i;j<arr.length;j++){
+                int end =j;
+                int sum =0;
+
+                for(int k = start;k<=end;k++){
+                    sum += arr[k];
+                }
+                System.out.println(i+" :subset Sum = "+sum);
+                if(sum>maxsum){
+                    maxsum = sum;
+
+                }
+            }
+        }
+        System.out.println("The maximum sum of the subsets is: "+maxsum);
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements of the array: ");
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the elements of the array:  ");
+        for(int i = 0; i<arr.length;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("The subsets of the given array are: ");
+        Subarrays(arr);
+    }
+}
