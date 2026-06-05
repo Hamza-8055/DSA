@@ -1,0 +1,26 @@
+import java.util.*;       //converting an integer to string
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
+        int n = sc.nextInt();
+        String str = "";
+        str = str+ n;
+        System.out.println(str);
+
+    }
+}
+
+import java.util.*;       //converting an integer to string and counting number of digits without using loops
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
+        int n = sc.nextInt();
+
+        String s = Integer.toString(n);
+        System.out.println(s);
+        System.out.println(s.length());
+
+    }
+}
