@@ -1,0 +1,36 @@
+import java.util.*;       //Using append() in StringBuilder
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an String: ");
+        String str = sc.nextLine();
+        StringBuilder sb = new StringBuilder(str);
+        sb.append("Xyz");
+        System.out.println(sb);
+        sb.append(123);
+        System.out.println(sb);
+        sb.append("*");
+        System.out.println(sb);
+    }
+}
+
+import java.util.*;       //Using insert(),delete(),reverse() and deleteCharAt() in StringBuilder
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an String: ");
+        String str = sc.nextLine();
+        StringBuilder sb = new StringBuilder(str);
+        sb.append("Xyz");
+        System.out.println(sb);
+        sb.deleteCharAt(2);
+        System.out.println(sb);
+        sb.delete(2,5);
+        System.out.println(sb);
+        sb.insert(2,'g');
+        System.out.println(sb);
+        sb.reverse();
+        System.out.println(sb);
+
+    }
+}
