@@ -1,0 +1,16 @@
+import java.util.*;      //sorting a string
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an String: ");
+        String str = sc.next();
+        char str1 [] = str.toCharArray();
+        Arrays.sort(str1);
+        for(char i:str1){
+            System.out.print(i);
+        }
+        StringBuilder sb = new StringBuilder("raghav");       /*stringBuilder doesn't have any sorting options, it requires
+                                                                 convert into string then follow same process*/
+        char str2 [] = sb.toString().toCharArray();
+    }
+}
