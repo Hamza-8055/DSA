@@ -1,0 +1,31 @@
+import java.util.*;      //String Compression
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        char ch[] = s.toCharArray();
+        String ans ="";
+        int i = 0,j=0;
+        while(j<ch.length){
+            if(ch[i]==ch[j]){
+                j++;
+            }else{
+                ans+=ch[i];
+
+                int len = j-i;
+                if(len>1){
+                    ans +=len;
+                }
+                i = j;
+
+            }
+        }
+        ans+=ch[i];
+
+        int len = j-i;
+        if(len>1){
+            ans +=len;
+        }
+        System.out.println(ans);
+    }
+}
