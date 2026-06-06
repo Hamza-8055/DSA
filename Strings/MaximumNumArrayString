@@ -1,0 +1,22 @@
+import java.util.*;      //maximum number from the array of strings using Integer.parseInt() function
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of Strings: ");
+        int  n= sc.nextInt();
+
+        String arr[] = new String[n];
+        for(int i = 0;i<arr.length;i++){
+            arr[i] = sc.next();
+        }
+        int mx = Integer.parseInt(arr[0]);    //converting string number to integers
+
+        for(int i = 0;i<arr.length;i++){
+
+            int m = Integer.parseInt(arr[i]);
+            mx = Math.max(mx,m);
+
+        }
+        System.out.println(mx);
+    }
+}
