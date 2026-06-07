@@ -1,0 +1,30 @@
+import java.util.*;             //inserting elements at any index of the stack
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> st = new Stack<>();
+
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+        st.push(6);
+        System.out.println(st);
+
+        System.out.println("Enter the index: ");
+        int n = sc.nextInt();
+
+        Stack<Integer> rt = new Stack<>();
+        while(st.size()>n-1){
+            rt.push(st.pop());
+        }
+        System.out.println(rt);
+        System.out.println("Enter the element: ");
+        int m = sc.nextInt();
+        st.push(m);
+        while(rt.size()>0){
+            st.push(rt.pop());
+        }
+        System.out.println(st);
+    }
+}
