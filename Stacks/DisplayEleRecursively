@@ -1,0 +1,23 @@
+import java.util.*;             //display the element of the stack recursively
+public class Main {
+    public static void displayrec(Stack<Integer> st) {
+        if (st.size() == 0) {
+            return;
+        }
+        int n = st.pop();
+        displayrec(st);
+        System.out.print(n + " ");
+        st.push(n);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> st = new Stack<>();
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+        st.push(6);
+        System.out.println(st);
+        displayrec(st);
+    }
+}
