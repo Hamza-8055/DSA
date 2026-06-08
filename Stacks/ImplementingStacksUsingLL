@@ -1,0 +1,84 @@
+import java.util.*;             //implementing stacks using linkedlist
+    public class Main{
+        public static class node{
+            int val;
+            node next;
+            node(int val){
+                this.val = val;
+            }
+
+        }
+        public static class Stack{
+            node head = null;
+            int size = 0;
+
+
+            void push(int x){
+                node temp = new node(x);
+                temp.next = head;
+                head = temp;
+                size++;
+            }
+
+            int pop(){
+                if(size==0){
+                    System.out.println("Stack is empty!");
+                    return -1;
+                }
+                int top = head.val;
+                head = head.next;
+                size--;
+                return top;
+
+            }
+
+            int peek(){
+                if(size==0){
+                    System.out.println("Stack is Empty!");
+                    return -1;
+                }
+                return head.val;
+            }
+            void displayrec(node h){
+                if(h==null){
+                    return;
+                }
+                displayrec(h.next);
+                System.out.print(h.val+" ");
+            }
+
+            void display(){
+                displayrec(head);
+                System.out.println();
+            }
+
+            int size(){
+                return size;
+            }
+
+
+
+            boolean isEmpty(){
+                if(size==0) return true;
+
+                return false;
+            }
+        }
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            Stack st = new Stack();
+
+            st.push(2);
+            st.push(3);
+            st.display();
+            st.push(4);
+            st.push(5);
+            st.push(6);
+            st.display();
+            st.pop();
+            st.display();
+            System.out.println(st.size());
+            System.out.println(st.peek());
+        }
+    }
