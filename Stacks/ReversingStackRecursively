@@ -1,0 +1,20 @@
+import java.util.*;             //reversing the stack recursively
+public class Main{
+    public static void insertbottomrec(Stack<Integer> st, int x){
+        if(st.size()==0){
+            st.push(x);
+            return;
+        }
+        int top = st.pop();
+        insertbottomrec(st,x);
+        st.push(top);
+    }
+    public static void reversest(Stack<Integer> st){
+        if(st.size()==1){
+            return;
+        }
+        int top = st.pop();
+        reversest(st);
+        insertbottomrec(st,top);
+    }
+}
