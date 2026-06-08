@@ -1,0 +1,27 @@
+import java.util.*;             //inserting the element at the bottom of the index
+public class Main{
+    public static void dltbottomrec(Stack<Integer> st){
+        int n = 20;
+        if(st.size()==0){
+            st.push(n);
+            return;
+        }
+        int m = st.pop();
+        dltbottomrec(st);
+        st.push(m);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> st = new Stack<>();
+
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+        st.push(6);
+        System.out.println(st);
+        dltbottomrec(st);
+        System.out.println(st);
+    }
+}
