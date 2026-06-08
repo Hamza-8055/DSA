@@ -1,0 +1,29 @@
+import java.util.*;             //removing the element of the stack at any index
+public class Main{
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> st = new Stack<>();
+
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+        st.push(6);
+        System.out.println(st);
+        System.out.println("Enter the index of the element: ");
+        int idx = sc.nextInt();
+
+        Stack<Integer> rt = new Stack<>();
+        while(st.size()>idx){
+            rt.push(st.pop());
+        }
+        st.pop();
+        while(rt.size() > 0){
+            st.push(rt.pop());
+        }
+
+        System.out.print(st);
+
+    }
+}
